@@ -1,0 +1,26 @@
+<link rel="import" href="/bower_components/app-storage/app-network-status-behavior.html">
+<script>
+  (() => {
+    'use strict';
+
+    Polymer.LoginAppBehaviorImpl = {
+      properties: {
+        editableNoteId: {
+          type: String,
+          notify: true
+        }
+      },
+      signOut() {
+        if (this.$.auth) {
+          this.$.auth.signOut();
+        }
+      }
+    };
+
+    Polymer.LoginAppBehavior = [
+      Polymer.AppNetworkStatusBehavior,
+      Polymer.PaperDialogBehavior,
+	  Polymer.IronFitBehavior
+    ];
+  })();
+</script>
